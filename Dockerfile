@@ -1,5 +1,5 @@
 ## Build stage
-FROM eclipse-temurin:21-jdk AS build
+FROM eclipse-temurin:25-jdk AS build
 WORKDIR /app
 
 COPY gradlew gradlew.bat ./
@@ -11,7 +11,7 @@ COPY src ./src
 RUN ./gradlew build -x test --no-daemon
 
 ## Run stage
-FROM eclipse-temurin:21-jre
+FROM eclipse-temurin:25-jre
 WORKDIR /deployments
 
 COPY --from=build /app/build/quarkus-app/lib/ ./lib/
