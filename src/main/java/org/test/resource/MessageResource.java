@@ -27,7 +27,7 @@ public class MessageResource {
                     .entity(Map.of("error", "content is required"))
                     .build();
         }
-        producer.send("products", content);
+        producer.send(content);
         return Response.accepted(Map.of("status", "published", "content", content)).build();
     }
 }

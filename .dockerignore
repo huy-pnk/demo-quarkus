@@ -1,7 +1,6 @@
 .git
 .idea
 .gradle
-build/quarkus-app/
 build/classes/
 build/generated-sources/
 build/reports/
